@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 *,
 *::after,
@@ -12,21 +11,23 @@ html {
 }
 body {
   color: #eee;
+  width: 100%;
+
   font-family: "Poppins", sans-serif;
-  position: relative;
 }
 nav {
-  background-color: #222222fb;
   padding: 2rem;
   display: flex;
   z-index: 9999;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  left: 0;
   scroll-behavior: smooth;
   width: 100%;
   box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.116);
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
 }
 .logo {
   font-size: 2.8rem;
@@ -49,16 +50,13 @@ nav {
 .nav-link:link,
 .nav-link:visited {
   color: #eee;
+  display: inline-block;
+  padding: 1rem 0;
   font-size: 1.8rem;
   text-decoration: none;
   transition: all 0.3s;
 }
 
-li:not(:last-child) .nav-link:hover,
-li:not(:last-child) .nav-link:active {
-  color: rgb(78, 221, 78);
-  border-bottom: 2px solid rgb(78, 221, 78);
-}
 .btn-green:link,
 .btn-green:visited {
   background-color: rgb(142, 8, 15);
@@ -86,10 +84,10 @@ li:not(:last-child) .nav-link:active {
 }
 
 .home-container {
-  background-image: url();
-  height: 100vh;
   width: 100%;
+  height: 100vh;
 
+  background-image: url("https://cdn.shopify.com/s/files/1/0521/3018/5373/articles/laptop_or_macbook.jpg?v=1670917158              ");
   background-size: cover;
   background-position: center center;
   object-fit: cover;
@@ -97,30 +95,30 @@ li:not(:last-child) .nav-link:active {
 }
 .home {
   display: flex;
+  align-items: center;
+  padding: 3rem;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to right, #000000de, #eeeeee10);
 
   /* albackgrign-items: center; */
-  background-image: url(https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?auto=compress&cs=tinysrgb&w=600);
 
-  justify-content: space-between !important;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+    to left bottom,
+    rgba(0, 0, 0, 0.329),
+    rgba(255, 255, 255, 0.282)
+  );
 }
-.positioning {
-  position: relative;
-  width: 40%;
-}
+
 .welcome-text {
   background-color: #222;
   padding: 3rem;
+  width: 50%;
+  margin-left: -12%;
   outline: 5px solid green;
-  position: absolute;
+
   /* border: 3px solid green; */
   outline-offset: 1rem;
-  left: 30%;
-  width: 100%;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 .welcome-text h5 {
   color: #932929;
@@ -150,12 +148,14 @@ li:not(:last-child) .nav-link:active {
 }
 .image-container {
   display: flex;
-  height: 100%;
+  align-items: center;
+
+  justify-content: center;
+  width: 25%;
 }
 .image-container img {
-  height: 80%;
-  width: 80%;
-
+  border-radius: 50%;
+width: 300px;
   object-fit: cover;
 }
 .text-center {
@@ -182,7 +182,8 @@ li:not(:last-child) .nav-link:active {
 }
 .about-container,
 .portfolio-container,
-.skills-container{
+.skills-container,
+.contact-conatiner {
   padding: 8rem 10rem;
 }
 .about-container {
@@ -214,9 +215,9 @@ li:not(:last-child) .nav-link:active {
 .heading-title::after {
   content: " ";
   top: 0%;
-  left: 0%;
+  right: 0%;
   height: 5px;
-  width: 80%;
+  width: 60%;
   background-image: linear-gradient(to right, #932929, white, green);
   position: absolute;
   font-size: 1.2rem;
@@ -226,10 +227,12 @@ li:not(:last-child) .nav-link:active {
     to right bottom,
     #9329298a,
     rgba(255, 255, 255, 0.678),
-    rgba(0, 128, 0, 0.548);)
+    rgba(0, 128, 0, 0.548)
+  );
 }
 .about {
   display: flex;
+
   width: 100%;
   gap: 3rem;
   align-items: center;
@@ -243,7 +246,7 @@ li:not(:last-child) .nav-link:active {
   text-align: left !important;
 }
 .about-image {
-  width: 90%;
+  width: 30%;
   padding: 3rem;
   transition: all 0.3s;
   position: relative;
@@ -279,11 +282,12 @@ li:not(:last-child) .nav-link:active {
 .about-image img {
   width: 100%;
 }
-.portfolio-container {
+.portfolio-container,
+.contact-conatiner {
   background-color: #000;
 }
-.card-container {
-  display: flex;
+.card-container {<i class="fa-solid fa-envelope" style="color: #ededed;"></i>
+
   justify-content: space-between;
   gap: 3rem;
   margin-top: 8rem;
@@ -291,8 +295,10 @@ li:not(:last-child) .nav-link:active {
 .card {
   background-color: #222;
   border-radius: 0.8rem;
+
   padding: 3rem;
   box-shadow: 1px 3px 3px rgba(255, 255, 255, 0.062);
+  display: flex;
   transition: all 0.3s;
 }
 .card:hover {
@@ -326,14 +332,14 @@ li:not(:last-child) .nav-link:active {
   display: inline-block;
   margin-top: 2rem;
 }
-.skills-container{
+.skills-container {
   background-color: #222;
 }
-.images-container{
-    display: flex;
-    margin-top: 8rem;
-    justify-content: space-between;
-    gap: 3rem;
+.images-container {
+  display: flex;
+  margin-top: 8rem;
+  justify-content: space-between;
+  gap: 3rem;
 }
 .skills-card {
   width: 400px;
@@ -341,33 +347,33 @@ li:not(:last-child) .nav-link:active {
   position: relative;
   overflow: hidden;
 }
-.skills-card img{
+.skills-card img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 12px;
 }
-.skills-content:hover .skills-content--content{
+.skills-content:hover .skills-content--content {
   display: flex;
 }
-@keyframes scroll{
-  0%{
-    transform: translateY(100%);
-  }
-  /*25%{
+@keyframes scroll {
+  0% {
     transform: translateY(80%);
+  }
+  /* 25% {
+    transform: translateY(80%);
+  }
+  50% {
+    transform: translateY(60%);
+  }
+  75% {
+    transform: translateY(30%);
+  } */
+  100% {
+    transform: translateY(0%);
+  }
 }
-50%{
-  transform: translateY(60%);
-}
-75%{
-  transform: translateY(30%);
-}*/
-100%{
-  transform: translateY(0);
-}
-}
-.skills-content{
+.skills-content {
   border-radius: 12px;
   transition: all 10s;
   position: absolute;
@@ -376,8 +382,8 @@ li:not(:last-child) .nav-link:active {
   overflow-y: hidden;
   width: 100%;
   height: 100%;
-  }
-  .skills-content--content{
+}
+.skills-content--content {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -393,46 +399,55 @@ li:not(:last-child) .nav-link:active {
   backdrop-filter: blur;
   justify-content: center;
   background-image: linear-gradient(
-    to left bottom, rgba(0,128,0,0.625), rgba(147, 42, 42, 0.682)
+    to left bottom,
+    rgba(0, 128, 0, 0.625),
+    rgba(147, 42, 42, 0.682)
   );
+  border-bottom: 2px solid rgb(78, 221, 78);
 }
-.skills-content--content h3{
+
+.skills-content--content h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
-.skills-content--content  p{
+.skills-content--content p {
   font-size: 1.6rem;
 }
-.skills-icon-container{
+.skills-icon-container {
   background-color: #eee;
   display: block;
   margin-top: 1.5rem;
   padding: 1.5rem;
   border-radius: 50%;
 }
-.skills-content--content i{
+.skills-content--content i {
   font-size: 1.6rem;
   cursor: pointer;
-}.contact {
-  background-color: #000;
+}
+
+.contact {
   margin-top: 8rem;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 3rem;
-}
-.contant-container{
-  background-color: #000;
-  padding: 3rem;
 }
 .contact-left {
   background-image: linear-gradient(to right top, #222, rgb(31, 56, 31));
   padding: 3rem;
   width: 40%;
-
 }
-.contact-left h3 { background-color: #0a080862;
+.contact-right {
+  padding: 3rem;
+  width: 45%;
+  background-image: linear-gradient(to left bottom, #222, #932929);
+}
+.contact-right h3 {
+  text-align: right;
+  font-size: 2.4rem;
+  font-weight: 400;
+}
+.contact-left h3 {
   font-size: 2.4rem;
 }
 .contact-left p {
@@ -444,16 +459,7 @@ li:not(:last-child) .nav-link:active {
 .contact-left span {
   display: block;
 }
-.contact-right {
-  background-image: linear-gradient(to left bottom, #932929a2, #222);
-  padding: 3rem;
-  width: 45%;
-}
-.contact-right h3 {
-  font-size: 2.4rem;
-  text-align: right;
-  font-weight: 500;
-}
+
 .social-media {
   margin-top: 2rem;
 }
@@ -466,7 +472,6 @@ li:not(:last-child) .nav-link:active {
 }
 .media-icons i {
   font-size: 1.8rem;
-  padding: 3rem;
 }
 .media-icons h3 {
   font-size: 1.8rem;
@@ -479,23 +484,20 @@ li:not(:last-child) .nav-link:active {
   display: block;
 }
 
-.social-media-icons-link {
+.social-media-icons-links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  background-color: #000;
-  padding: 3rem;
+  gap: 1rem;
 }
-.social-media-icons-link {
+.social-media-icons-links {
   font-size: 1.8rem;
-  padding: 3rem;
 }
 form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   height: 100%;
-justify-content: center;
+  justify-content: center;
 }
 input,
 textarea {
@@ -547,7 +549,7 @@ textarea {
 .email-link-fixed::after {
   content: "";
   display: flex;
-  align-self: center;
+
   justify-self: center;
   height: 150px;
   width: 3px;
@@ -562,58 +564,19 @@ textarea {
   flex-direction: column;
   gap: 2rem;
   bottom: 0;
-  }
-  .email-link-fixed p {
-    -webkit-writing-mode: vertical-rl;
-  
-    font-size: 1.6rem;
-  }
-  .menu-icon{
-    display: none;
-  }
-  .menu-icon i{
-    font-size: 3rem;
-  }
-
-  @media(max-width:1200px){
-.logo{
-  font-size: 2.2rem;
 }
- }
- 
 
+.email-link-fixed p {
+  -webkit-writing-mode: vertical-rl;
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
+  font-size: 1.6rem;
+}
+.menu-icon {
+  display: none;
+.menu-icon i {
+  font-size: 3rem;
+}
+}
+.form {
+  background-color: #222;
+}
