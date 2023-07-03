@@ -1,8 +1,32 @@
-.html{
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+body{
+    display: flex;
 
 }
-.container{
-   background-color: aqua;
-   position: center;
-    justify-content: space-around;
+.sidebar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 24px;
+    height: 100vh;
+    padding: 01.7rem;
+    color: beige;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background-color: rgba(113, 99, 186,255);
+}
+.logo{
+    height: 80px;
+    padding: 16px;
+}
+.menu{
+
 }
