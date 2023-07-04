@@ -1,0 +1,36 @@
+#container{
+    background-color: rgb(234,255,28);
+    width: 800px;
+    height: 700px;margin: 5rem
+}
+.header{
+    
+    width: px;
+    height: 100px;
+    
+}
+.header h1{
+    color: rgb(255,255,84);
+    background-color: rgb(80, 63,58 );
+   height: 100px; 
+}
+.main{
+    display: flex ;
+}
+.team1{
+    width: 250px;
+    background-color: blanchedalmond;
+    height: 300px;
+    
+}
+.team2{
+    width: 250px;
+    background-color: rgb(24,54,89);
+    height: 300px;
+}
+.team3{
+    width: 300px;
+    background-color: rgb(255, 64,55 );
+    height: 300px;
+}
+
